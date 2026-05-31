@@ -80,7 +80,7 @@ Action Input: {"answer": "<final answer>"}
 
 Do not output anything else.
 """
-def run_react_agent(user_query, max_steps=1git):
+def run_react_agent(user_query, max_steps=5):
 
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -98,7 +98,6 @@ def run_react_agent(user_query, max_steps=1git):
 
         print(f"------ Step: {step + 1} ------")
         print(llm_output)
-
      
 
         tool_name = ACTION_RE.search(llm_output)
